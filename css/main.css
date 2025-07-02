@@ -1,0 +1,126 @@
+.hidden {
+    display: none;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+h1, p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.body-image {
+    display: block;
+    max-width: 100%;
+}
+
+.anatomy-image {
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+    overflow: hidden;
+}
+
+.target-zone {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(200, 200, 200, .2);
+    border: 2px dashed rgba(80, 206, 22, .6);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+#heart {
+    top: 40%;
+    left: 50%;
+}
+
+#lungs {
+    top: 36%;
+    left: 33%;
+    height: 80px;
+}
+
+#liver {
+    top: 55%;
+    left: 35%;
+}
+
+#stomach {
+    top: 55%;
+    left: 50%;
+}
+
+#intestines {
+    top: 74%;
+    left: 37%;
+}
+
+.labels-container {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+}
+
+.labels-header {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 18px;
+}
+
+.label {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    margin: 8px 0;
+    cursor: grab;
+    transition: all .2s ease-in-out;
+    text-align: center;
+}
+
+.label:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.reset-btn {
+    display: block;
+    margin: 30px auto;
+    background-color: #e74c3c;
+    border: none;
+    padding: 15px 20px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color .2s ease-in-out;
+}
+
+.reset-btn:hover {
+    background-color: #c0392b;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+}
