@@ -48,6 +48,14 @@ h1, p {
     transition: all 0.2s ease-in-out;
 }
 
+
+.highlight
+{
+    background-color: #ffff00;
+    border: 2px dashed #007bff;
+    transition: background-color 0.2s ease;
+}
+
 #heart {
     top: 40%;
     left: 50%;
@@ -87,11 +95,15 @@ h1, p {
     font-size: 18px;
 }
 
+.label.dragging{
+    display: none;
+}
+
 .label {
     background-color: #3498db;
     color: #fff;
-    padding: 10px;
-    margin: 8px 0;
+    padding: 20px;
+    margin: 12px 0;
     cursor: grab;
     transition: all .2s ease-in-out;
     text-align: center;
@@ -100,6 +112,7 @@ h1, p {
 .label:hover {
     background-color: #2980b9;
     transform: translateY(-2px);
+    transition: transform 0.3s ease-in-out;
 }
 
 .reset-btn {
