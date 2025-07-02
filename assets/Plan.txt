@@ -1,0 +1,41 @@
+# Bug Fix Assignment – Drag and Drop Game
+ Chris Macwan
+
+## 🔧 Overview
+This plan outlines the bugs identified in the original drag-and-drop game, their root causes, and the exact code-level solutions applied to fix them. Two core bugs were resolved, and the code was cleaned up for better UX and logic. All changes were committed using proper Git branching.
+
+---
+
+Bug #1: Multiple Labels Allowed in One Drop Zone
+
+# Problem:
+Each `.target-zone` was allowing multiple labels to be dropped, stacking them inside — which should not happen.
+
+# Fix:
+Modified the `drop()` function to check if the drop zone is already occupied:
+
+-> js
+if (this.children.length === 0) {
+    this.appendChild(currentDraggedElement);
+}
+
+# Bug #2: Reset Button Did Not Restore Labels
+
+# Problem:
+After dragging labels into the target zones, there was no working Reset button to move them back. The board could not be reused or restarted without refreshing the page.
+
+# Fix:
+- Added a `.reset-btn` click event listener
+- For each `.target-zone`, checked if it contains a child
+- If yes, removed the child and created a new `.label` div with the same content
+- Set `draggable = true` and re-attached the `dragstart` event
+- Appended the recreated label back to `#label-box`
+
+-> js
+const newDiv = document.createElement("div");
+newDiv.className = "label";
+newDiv.textContent = target.firstChild.textContent;
+newDiv.draggable = true;
+newDiv.addEventListener("dragstart", dragStart);
+labelBox.appendChild(newDiv);
+target.removeChild(target.firstChild);
